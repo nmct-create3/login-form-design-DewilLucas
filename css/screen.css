@@ -16,10 +16,15 @@
 \*------------------------------------*/
 
 :root {
-    --global-color-alpha-rgb : 51 133 255;
-    --global-color-alpha : rgb(var(--global-color-alpha));
-    accent-color: #3385FF;
     
+    --global-color-alpha-light: #4F95FF;
+    --global-color-alpha: #3385FF;
+    --global-color-alpha-dark: #2E77E6;
+    accent-color: var(--global-color-alpha);
+    --global-baseline: 8px;
+    --global-whitespace: calc(var(--global-baseline) * 3);/* = 24px */
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2);/* = 48px */
+
 }
 
 /* CSS variables here */
@@ -94,28 +99,28 @@ h3 {
 
 h1 {
     font-size: 36px;
-    line-height: 48px;
-    margin: 0 0 24px;
+    line-height: var(--global-whitespace-xl);
+    margin: 0 0 var(--global-whitespace);
 }
 
 h2 {
     font-size: 32px;
     line-height: 40px;
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace);
 }
 
 h3 {
     font-size: 26px;
     line-height: 32px;
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace);
 }
 
 h4,
 h5,
 h6 {
     font-size: 20px;
-    line-height: 24px;
-    margin: 0 0 24px;
+    line-height: var(--global-whitespace);
+    margin: 0 0 var(--global-whitespace);
 }
 
 p,
@@ -125,12 +130,12 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace);
 }
 
 ul,
 ol {
-    padding-left: 24px;
+    padding-left: var(--global-whitespace);
 }
 
 li ul,
@@ -142,7 +147,7 @@ blockquote {
     font-style: normal;
     font-size: 23px;
     line-height: 32px;
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace);
 }
 
 blockquote * {
@@ -161,23 +166,24 @@ hr {
     border: 0;
     height: 1px;
     background: LightGrey;
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace);
 }
 
 a {
-    color: #3385FF;
+    color: var(--global-color-alpha);
     
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: #b133ff;
+    color: var(--global-color-alpha);
 }
 
 a:hover,
 a:focus {
-    color: #2355a1;
+    
+    color: var(--global-color-alpha-light);
 }
 
 label,
@@ -196,7 +202,7 @@ input{
 
 .o-row {
     position: relative;
-    padding: 24px 24px 0;
+    padding: var(--global-whitespace) var(--global-whitespace) 0;
 }
 
 .o-row--login {
@@ -212,7 +218,7 @@ input{
 
 .o-row--lg {
     padding-top: 48px;
-    padding-bottom: 24px;
+    padding-bottom: var(--global-whitespace);
 }
 
 .o-row--xl {
@@ -259,7 +265,7 @@ input{
 }
 
 .o-section+.o-section {
-    padding-top: 24px;
+    padding-top: var(--global-whitespace);
 }
 
 @media (min-width: 768px) {
@@ -318,7 +324,7 @@ input{
 }
 
 .o-layout--gutter-lg>.o-layout__item {
-    padding: 0 24px;
+    padding: 0 var(--global-whitespace);
 }
 
 .o-layout--gutter-xl {
@@ -479,7 +485,7 @@ input{
     
 }
 .c-card__header{
-    padding: 48px 48px 0;
+    padding: var(--global-whitespace-xl) var(--global-whitespace-xl) 0;
     font-size: 18px;
     line-height: 24px;
     color: #20223A;
@@ -487,12 +493,12 @@ input{
     
 }
 .c-card__body{
-    padding: 48px 48px 24px;
+    padding: var(--global-whitespace-xl) var(--global-whitespace-xl) var(--global-whitespace);
 }
 .c-card__footer{
     text-align: center;
     border-top: solid 1px #E2E3E7;
-    padding: 24px 24px 0px 24px;
+    padding: var(--global-whitespace) var(--global-whitespace) 0px var(--global-whitespace);
     display: flow-root;
     font-size: 14px;
     line-height: 19px;
@@ -523,8 +529,8 @@ input{
     border: 1px solid #E2E3E7;
     border-radius: 3px;
     font-family: "Inter Web",sans-serif;
-    height: 48px;
-    line-height: 24px;
+    height: var(--global-whitespace-xl);
+    line-height: var(--global-whitespace);
     padding: 11px,16px;
     outline: none;
 
@@ -570,8 +576,8 @@ input{
     border: 1px solid #2E77E6;
     width: 100%;
     background-color:#3385FF;
-    height: 48px;
-    line-height: 24px;
+    height: var(--global-whitespace-xl);
+    line-height: var(--global-whitespace);
     padding: 11px 16px;
     color: #FFFFFF;
     border-radius: 3px;
